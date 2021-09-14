@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e438d974-c075-4622-8106-4af4d2a493f2">
+	<property name="ireport.zoom" value="0.9090909090909096"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     karyawan.`NIK` AS karyawan_NIK,
+     karyawan.`Nama` AS karyawan_Nama,
+     karyawan.`Email` AS karyawan_Email,
+     karyawan.`No_telp` AS karyawan_No_telp,
+     karyawan.`Alamat` AS karyawan_Alamat,
+     karyawan.`Tempat_lahir` AS karyawan_Tempat_lahir,
+     karyawan.`Tgl_lahir` AS karyawan_Tgl_lahir,
+     karyawan.`Jenkel` AS karyawan_Jenkel,
+     karyawan.`Jabatan` AS karyawan_Jabatan
+FROM
+     `karyawan` karyawan]]>
+	</queryString>
+	<field name="karyawan_NIK" class="java.lang.String"/>
+	<field name="karyawan_Nama" class="java.lang.String"/>
+	<field name="karyawan_Email" class="java.lang.String"/>
+	<field name="karyawan_No_telp" class="java.lang.String"/>
+	<field name="karyawan_Alamat" class="java.lang.String"/>
+	<field name="karyawan_Tempat_lahir" class="java.lang.String"/>
+	<field name="karyawan_Tgl_lahir" class="java.sql.Date"/>
+	<field name="karyawan_Jenkel" class="java.lang.String"/>
+	<field name="karyawan_Jabatan" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="93" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="014cbc04-ab1f-4982-98e9-5a0d0803329a" x="0" y="64" width="802" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JL. Terentang Elok no.8 RT/RW 011/09 Kee. Cakung, Kel. Penggilingan Jakarta Timur ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9a3ec80c-fc96-4ea9-8179-50217b81c15b" x="0" y="32" width="802" height="32"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fins Catering]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="66eae6bc-9c18-43d5-971c-dc0e47f4ee83" x="0" y="92" width="802" height="1"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="97" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="1771a426-0b49-4d07-b213-c0f45464d221" x="0" y="0" width="802" height="60"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Laporan Data Karyawan]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="5fcc3219-024c-49bb-b8ec-c2376a9dc80a" x="0" y="77" width="100" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="6a04cd17-a8c7-474a-bdba-438565d564e3" x="0" y="77" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NIK]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="7403bf94-65b9-46df-b519-dcfa3ae55cd4" x="100" y="77" width="100" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="44f5d5d3-a6ac-4f08-b999-19adba1df7e4" x="100" y="77" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="4157ac7b-ea59-4b2d-bbbd-428f80327eb0" x="0" y="0" width="100" height="20"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="e03bd688-2932-45b7-a37f-2dd051c223f6" x="4" y="0" width="92" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{karyawan_NIK}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="148e6b16-94f7-443c-b4ed-73cca927cce1" x="100" y="0" width="100" height="20"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="b8421664-36f2-4ea0-ba36-e66aaa3d6913" x="104" y="0" width="92" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{karyawan_Nama}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>
